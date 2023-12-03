@@ -2,7 +2,8 @@
 FROM python:3.9-slim
 
 # Встановлення залежностей
-RUN pip install Flask MongoEngine docker
+COPY requirements.txt /app/
+RUN pip install -r /app/requirements.txt
 
 # Копіювання вихідного коду в контейнер
 COPY ./app /app
